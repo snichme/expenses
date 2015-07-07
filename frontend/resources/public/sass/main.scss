@@ -1,0 +1,32 @@
+@import "materialize";
+
+.expenses__rows {
+  @extend .collection;
+}
+.expenses__row {
+  padding: 0 !important;
+  @extend .collection-item;
+
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  -webkit-justify-content: space-between; /* Safari */
+  justify-content:         space-between;
+}
+.expenses__deletebutton {
+  @extend .btn;
+}
+.expenses__name {
+  -webkit-flex-grow: 2; /* Safari */
+  flex-grow:         2;
+}
+.expenses__amount {
+  -webkit-flex-basis: 90px;
+  flex-basis: 90px;
+}
+.expenses__addbutton {
+  @extend .btn;
+}
+
+.expenses__plain {
+  font-family: monospace;
+}
