@@ -30,12 +30,11 @@ build-docker:
 	docker build --rm --tag=johannesboyne/godockersample .
 
 run-docker:
-	docker run \
-		-e HELLO=world \
-		-p 1337:1337 \
+	docker run -d \
+		-p 3000:3000 \
 		johannesboyne/godockersample
 
-deploy: build run-docker
+deploy: build build-docker run-docker
 
 clean:
 	rm -rf $(RELEASE_DIR)
