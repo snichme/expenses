@@ -27,10 +27,10 @@ run: build
 	./$(RELEASE_DIR)/main
 
 build-docker:
-	docker build --rm --tag=johannesboyne/godockersample .
+	sudo docker build --rm --tag=johannesboyne/godockersample .
 
 run-docker:
-	docker run -d \
+	sudo docker run -d \
 		-p 3000:3000 \
 		johannesboyne/godockersample
 

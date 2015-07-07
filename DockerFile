@@ -1,7 +1,7 @@
 FROM tianon/true
 EXPOSE 3000
 
-ADD main /
-ADD public /public
+ADD release/main /
+ADD release/public /public
 
 CMD ["/main"]
