@@ -5,7 +5,12 @@ BACKEND_DIR = backend
 FRONTEND_DIR = frontend
 RELEASE_DIR = release
 
-all: run
+all: deploy
+
+setup:
+	$(MAKE) -C $(BACKEND_DIR) setup
+	$(MAKE) -C $(FRONTEND_DIR) setup
+
 
 build-backend:
 	$(MAKE) -C $(BACKEND_DIR) build
@@ -34,7 +39,7 @@ run-docker:
 		-p 3000:3000 \
 		johannesboyne/godockersample
 
-deploy: build build-docker run-docker
+deploy: setup build build-docker run-docker
 
 clean:
 	rm -rf $(RELEASE_DIR)
