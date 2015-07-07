@@ -86,5 +86,5 @@ func main() {
 	setupPaymentsRoutes(mainRouter)
 	n := negroni.Classic()
 	n.UseHandler(mainRouter)
-	n.Run("127.0.0.1:" + getPort())
+	n.Run(":" + getPort())
 }
