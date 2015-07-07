@@ -2,4 +2,4 @@ setup:
 
 build:
 	#lein with-profile -dev,+uberjar cljsbuild once
-	lein with-profile -dev,+production uberjar
+	LEIN_ROOT='yes' lein with-profile -dev,+production uberjar
